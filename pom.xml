@@ -16,7 +16,7 @@
 	<name>api-smilerec</name>
 	<description>Crud de usuarios </description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version>8</java.version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 	</properties>
@@ -64,7 +64,7 @@
 				<version>3.0.3</version>
 				<configuration>
 					<appName>api-smilerec</appName>
-					<jdkVersion>11</jdkVersion>
+					<jdkVersion>8</jdkVersion>
 				</configuration>
 			</plugin>
 		</plugins>
