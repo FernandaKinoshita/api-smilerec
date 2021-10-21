@@ -2,14 +2,17 @@
 package br.com.fiap.apismilerec.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -32,6 +35,20 @@ public class PacienteController {
 	public List<Paciente> lista() {
 		return pacienteRepository.findAll();
 	}
+	
+	
+	//Lista um paciente pelo id do terapeuta
+	@GetMapping("/terapeuta/{id}")
+	public List<Paciente> listaPorIdTerapeuta(@PathVariable Long id) {
+		return pacienteRepository.findByIdTerapeuta(id);
+	}
+	
+	
+	//Lista um paciente pelo id dele mesmo
+		@GetMapping("/{id}")
+		public Optional<Paciente> listaPorIdPaciente(@PathVariable Long id) {
+			return pacienteRepository.findById(id);
+		}
 
 	// Salva o paciente no banco de dados
 	@PostMapping

@@ -21,7 +21,7 @@ public class LoginController {
 		Terapeuta terapeuta = terapeutaRepository.findByEmail(login.getEmail());
 
 		if (terapeuta.getSenha().equals(login.getSenha())) {
-			return ResponseEntity.ok().build();
+			return ResponseEntity.ok(terapeuta);
 		}
 
 		return ResponseEntity.badRequest().build();
